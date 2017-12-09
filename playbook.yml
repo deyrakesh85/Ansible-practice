@@ -1,0 +1,15 @@
+---
+ - name: Install apache
+   hosts: servers
+   become: yes
+   become_method: sudo
+   tasks:
+    
+    - name: Update apt cache
+      apt: update_cache=yes
+
+    - name: Upgrade packages
+      apt: upgrade=dist
+        
+    - name: install apache2
+      apt: name=apache2 state=latest
