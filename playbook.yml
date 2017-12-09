@@ -1,5 +1,6 @@
 ---
  - name: Install apache
+   hosts: servers
    become: yes
    become_method: sudo
    tasks:
